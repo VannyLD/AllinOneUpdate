@@ -1,14 +1,5 @@
 @echo off
-set URL="https://drive.google.com/uc?export=download&id=1QNx3RTnkuDn0D22zgGVM5yiGdOQLq8sl"
-set OUTPUT="downloaded_file.ext"
-
-:: Step 1: Fetch Google Drive's confirmation token
-for /f "tokens=*" %%i in ('curl -c cookie.txt -s %URL% ^| findstr "confirm"') do set TOKEN=%%i
-set TOKEN=%TOKEN:confirm=%
-set TOKEN=%TOKEN:amp;=%
-
-:: Step 2: Download the full file using the extracted token
-curl -Lb cookie.txt "%URL%&confirm=%TOKEN%" -o %OUTPUT%
-
+echo Downloading latest version...
+PowerShell -Command "& {Invoke-WebRequest -Uri 'https://drive.usercontent.google.com/download?id=1QNx3RTnkuDn0D22zgGVM5yiGdOQLq8sl&export=download&authuser=0&confirm=t&uuid=510a94a4-177d-44a7-b4da-2d4924c17fb0&at=AEz70l4GcPmNAPm0oEZUton4kMv8:1741811441686' -OutFile 'All_in_One v1.7.4.exe'}"
 echo Download complete!
 pause
