@@ -1,5 +1,13 @@
 @echo off
-echo Downloading latest version...
+echo Closing current application...
+taskkill /IM "All_in_One_v1.7.4.exe" /F
+timeout /t 2 /nobreak
+
+echo Downloading new version...
 gdown "https://drive.google.com/uc?id=1QNx3RTnkuDn0D22zgGVM5yiGdOQLq8sl" -O "All_in_One_v1.7.4.exe"
-echo Download complete!
-pause
+
+echo Starting new version...
+start All_in_One_v1.7.4.exe.exe
+
+echo Cleaning up...
+del "%~f0"
