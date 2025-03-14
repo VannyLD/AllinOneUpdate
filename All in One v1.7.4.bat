@@ -4,7 +4,7 @@ taskkill /IM "All_in_One_v1.7.4.exe" /F
 timeout /t 2 /nobreak
 
 echo Downloading new version...
-gdown "https://drive.google.com/uc?id=1QNx3RTnkuDn0D22zgGVM5yiGdOQLq8sl" -O "All_in_One_v1.7.4.exe"
+gdown "https://drive.google.com/uc?id=16j3qEERVKG0fMI9iUZBkwKvLSj-MzJSx" -O "All_in_One_v1.7.4.exe"
 
 echo Starting new version...
 start All_in_One_v1.7.4.exe
