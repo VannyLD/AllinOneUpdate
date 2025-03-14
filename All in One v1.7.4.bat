@@ -1,6 +1,6 @@
 @echo off
 echo Closing current application...
-taskkill /IM "All_in_One_v1.7.4.exe" /F
+taskkill /IM "All_in_One_v1.7.3.exe" /F
 timeout /t 2 /nobreak
 
 echo Downloading new version...
