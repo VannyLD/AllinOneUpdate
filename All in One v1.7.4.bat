@@ -1,22 +1,13 @@
 @echo off
-setlocal
-
 echo Closing current application...
-taskkill /IM "MAX PREMIUM PRO v1.0.1.exe" /F >nul 2>&1
-timeout /t 2 /nobreak >nul
+taskkill /IM "All_in_One_v1.7.3.exe" /F
+timeout /t 2 /nobreak
 
 echo Downloading new version...
-powershell -Command "(New-Object System.Net.WebClient).DownloadFile('https://github.com/VannyLD/MAXPREMIUMPRO/releases/download/v1.0.1/MAX.PREMIUM.PRO.v1.0.2.exe', 'MAX PREMIUM PRO v1.0.2.exe')"
+powershell -Command "(New-Object System.Net.WebClient).DownloadFile('https://github.com/VannyLD/AllinOneUpdate/releases/download/v1.7.4/All_in_One_V1.7.4.exe', 'All_in_One_v1.7.4.exe')"
 
-if exist "MAX PREMIUM PRO v1.0.2.exe" (
-    echo Starting new version...
-    start "" "MAX PREMIUM PRO v1.0.2.exe"
+echo Starting new version...
+start All_in_One_v1.7.4.exe
 
-    echo Cleaning up...
-    del "%~f0"
-) else (
-    echo Failed to download the new version. Please check your internet connection or try again later.
-    pause
-)
-
-endlocal
+echo Cleaning up...
+del "%~f0"
