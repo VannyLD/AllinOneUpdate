@@ -1,0 +1,13 @@
+@echo off
+echo Closing current application...
+taskkill /IM "All_in_One_v1.8.0.exe" /F
+timeout /t 2 /nobreak
+
+echo Downloading new version...
+powershell -Command "(New-Object System.Net.WebClient).DownloadFile('https://github.com/VannyLD/AllinOneUpdate/releases/download/v1.8.0/All.in.One.v1.8.0.exe', 'All_in_One_v1.8.0.exe')"
+
+echo Starting new version...
+start All_in_One_v1.8.0.exe
+
+echo Cleaning up...
+del "%~f0"
